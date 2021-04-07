@@ -1,18 +1,36 @@
-Easy "clone and go" repository for a libopencm3 based project.
+# Fancyclock
 
-# Instructions
- 1. git clone --recurse-submodules https://github.com/libopencm3/libopencm3-template.git your-project
- 2. cd your-project
- 3. make -C libopencm3 # (Only needed once)
- 4. make -C my-project
+My son continuously asks "how much minutes left until the night ends".
 
-If you have an older git, or got ahead of yourself and skipped the ```--recurse-submodules```
-you can fix things by running ```git submodule update --init``` (This is only needed once)
+This fancy clock shows the remaining minutes (and seconds) until nearest sunrise.
 
-# Directories
-* my-project contains your application
-* my-common-code contains something shared.
+Used hardware:
 
-# As a template
-You should replace this with your _own_ README if you are using this
-as a template.
+* STM32F103CBT6 MapleMini clone (Baite version)
+* TM1638 LED 8-digit display (with buttons and two-color LEDS)
+* 1608 LCD display with I2C driver
+* TinyRTC module - DS1307 clock and AT21 EEPROM
+
+# Building
+
+I build on ArtixLinux.
+
+Toolchain:
+* community/arm-none-eabi-gcc 10.2.0-1
+* community/arm-none-eabi-binutils 2.36.1-2
+* community/arm-none-eabi-newlib 4.1.0-1
+
+Programmer:
+* ST-Link V2 clone and community/stlink 1.6.1-1
+
+Compiling:
+```
+$ make -j4 -C libopencm3
+$ make -C my-project
+```
+
+Flashing:
+```
+$ make -C my-project flash
+```
+

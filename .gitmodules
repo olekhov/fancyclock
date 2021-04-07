@@ -1,3 +1,9 @@
 [submodule "libopencm3"]
 	path = libopencm3
 	url = https://github.com/libopencm3/libopencm3
+[submodule "libs/device_lib"]
+	path = libs/device_lib
+	url = https://github.com/ppkt/device_lib.git
+[submodule "libs/common_lib"]
+	path = libs/common_lib
+	url = https://github.com/ppkt/common_lib.git
