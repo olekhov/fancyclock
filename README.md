@@ -34,3 +34,15 @@ Flashing:
 $ make -C my-project flash
 ```
 
+# TODO
+
+* Set clock (and timezone and latitude & longitude ) using keyboard on TM1638 module.
+* Add support for various other moments, like:
+  - How much minutes until day ends (until sunset)?
+  - How much days until winter ends?
+  - How much hours until my birthday?
+  - How much minutes until school holidays?
+  - How much minutes until Solstice? Unil Equinox?
+  - Dozens of these.. :)
+
+
